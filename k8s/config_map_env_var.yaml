@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global-env-config-example
+  namespace: default
+  labels: # WILL TARGET PODS WITH FOLLOWING LABEL
+    app: example-app
+data:
+  TEST_VAR: some test variable result
