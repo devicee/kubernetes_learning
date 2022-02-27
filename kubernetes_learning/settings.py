@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from environs import Env
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -122,3 +124,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# TEST CONFIGURATION READING!
+env = Env()
+# required variables
+test_var = env("TEST_VAR")
+
+print(f"READ ENV VARIABLE: {test_var}", file=sys.stderr)
+
+secret = env("PASSWORDVAR", default="default password")
+print(f"SECRET VARIABLE: {secret}", file=sys.stderr)
