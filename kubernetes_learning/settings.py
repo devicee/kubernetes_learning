@@ -125,12 +125,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#################################################################
 # TEST CONFIGURATION READING!
+# required variables to be read from the Kubernetes configuration
+#################################################################
 env = Env()
-# required variables
 test_var = env("TEST_VAR")
-
-print(f"READ ENV VARIABLE: {test_var}", file=sys.stderr)
+print(f"READ TEST_VAR VARIABLE: {test_var}", file=sys.stderr)
 
 secret = env("PASSWORDVAR", default="default password")
-print(f"SECRET VARIABLE: {secret}", file=sys.stderr)
+print(f"READ PASSWORDVAR SECRET VARIABLE: {secret}", file=sys.stderr)
+#################################################################
