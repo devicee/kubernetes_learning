@@ -53,4 +53,5 @@ This document will guide you through the setup of kubernetes of your application
 11. That's it! You are done, you can access your site via the HTTPS endpoint.
 
 ## Guideline and references to help you understand Kubernetes better and more
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8h4FoWK7tIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+https://www.youtube.com/watch?v=8h4FoWK7tIA&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd
