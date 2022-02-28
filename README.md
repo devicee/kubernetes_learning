@@ -1,5 +1,5 @@
 # README
-This document will guide you through the setup of kubernetes of your application. Then it will continue to setup the SSL certificate for HTTPS.
+This document will guide you through the setup of kubernetes of your application. Then it will continue to setup the TLS certificate for HTTPS.
 ## Deploying your application in Kubernetes
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
@@ -33,8 +33,8 @@ This document will guide you through the setup of kubernetes of your application
 19. Check on your machine the DNS is refreshed and links to the above IP address by typing: ``nslookup www.lab4iottest.xyz``
 20. Then apply the ingress configuration ``kubectl apply -f k8s/ingress.yaml``, wait till you can open the Django site on the given domain via http protocol! 
 
-## Setting up the SSL certificate
-1. Build the namespace for the SSL certificate manager ``kubectl create namespace cert-manager``
+## Setting up the TLS certificate
+1. Build the namespace for the TLS certificate manager ``kubectl create namespace cert-manager``
 2. Add to the HELM package manager the certificate-manager ``helm repo add jetstack https://charts.jetstack.io``
 3. Update HELP ``helm repo update``
 4. Install the certificate-manager in above namespace ``helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.2.0 --set installCRDs=true``
@@ -56,5 +56,5 @@ This document will guide you through the setup of kubernetes of your application
 1. Kuberenetes for beginners:
 https://www.youtube.com/watch?v=8h4FoWK7tIA&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd
 
-2. SSL Certificate and nginx ingress controller for DigitalOcean
+2. TLS Certificate and nginx ingress controller for DigitalOcean
 https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm
