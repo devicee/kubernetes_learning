@@ -53,5 +53,8 @@ This document will guide you through the setup of kubernetes of your application
 11. That's it! You are done, you can access your site via the HTTPS endpoint.
 
 ## Guideline and references to help you understand Kubernetes better and more
-
+1. Kuberenetes for beginners:
 https://www.youtube.com/watch?v=8h4FoWK7tIA&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd
+
+2. SSL Certificate and nginx ingress controller for DigitalOcean
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm
