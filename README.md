@@ -4,7 +4,7 @@ This document will guide you through the setup of kubernetes of your application
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
 2. Then try to run it locally with the following command:
-``docker run --name django_refa -d -p 8000:8000 refikh/django_refa:latest``
+``docker run --name django_refa -d -e TEST_VAR='SOMETHING' -p 8000:8000 refikh/django_refa:latest``
 3. Then test it in your browser: `localhost:8000`
 4. Login to docker: `docker login` and enter your username and password
 5. Push it to Docker Hub with the following command:
