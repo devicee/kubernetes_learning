@@ -1,5 +1,6 @@
 # README
-This document will guide you through the setup of kubernetes of your application. Then it will continue to setup the TLS certificate for HTTPS.
+This document will guide you through the setup of kubernetes of your application. Then it will continue to setup the TLS certificate for encrypted communication HTTPS.
+![Logo](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/kubernetes_cluster_in_this_tutorial.png)
 ## Deploying your application in Kubernetes
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
