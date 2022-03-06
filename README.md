@@ -4,7 +4,7 @@ This document will guide you through the setup of a web application with kuberne
 ![Diagram](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/kubernetes_cluster_in_this_tutorial.png)
 The goal of this tutorial is to learn how to do a simple kubernetes deployment of a web application. Even if one of the containers (pods, where the Django application runs) fails to operate correctly, the whole web application will still continue to work properly.
 We will build the above architecture, the author expects basic knowledge of kubernetes so all the details will not be discussed. From left to right, we have an ingress controller through which we can access the kubernetes cluster. Once the client reaches the ingress controller, it will pass the request to the my-service-example service, which acts as a "load balancer".
-The service will pass the request to any of the four running pods, app: example-app. The example app is nothing else but a docker container running a basic Django application. The above example was successfully deployed on DigitalOcean. For more details and to fully understand this example, go to the references and guidelines below.
+The service will pass the request to any of the four running pods, app: example-app. The example app is nothing else but a docker container running a basic Django application. The above example was successfully deployed on DigitalOcean, the cluster is running on an HA control plane consisting of 3 nodes. For more details and to fully understand this example, go to the references and guidelines below.
 ## Deploying your application in Kubernetes
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
