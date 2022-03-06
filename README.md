@@ -1,6 +1,6 @@
 # README
 This document will guide you through the setup of a web application with kubernetes. The emphasis is on the kubernetes itself rather than a simple Django app. Once it is accessible via the domain, unencrypted HTTP, we will continue to set up the TLS certificate for secure HTTPS.
-![Diagram](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/kubernetes_cluster_in_this_tutorial.png)
+![Diagram](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/kubernetes_cluster_in_this_tutorial.png)
 ## Description of the diagram and 
 
 ## Deploying your application in Kubernetes
