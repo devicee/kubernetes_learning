@@ -1,8 +1,10 @@
 # README
 This document will guide you through the setup of a web application with kubernetes. The emphasis is on the kubernetes itself rather than a simple Django app. Once it is accessible via the domain, unencrypted HTTP, we will continue to set up the TLS certificate for secure HTTPS.
+## Abstract 
 ![Diagram](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/kubernetes_cluster_in_this_tutorial.png)
-## Description of the diagram and 
-
+The goal of this tutorial is to learn how to do a simple kubernetes deployment of a web application. Even if one of the containers (pods, where the Django application runs) fails to operate correctly, the whole web application will still continue to work properly.
+We will build the above architecture, the author expects basic knowledge of kubernetes so all the details will not be discussed. From left to right, we have an ingress controller through which we can access the kubernetes cluster. Once the client reaches the ingress controller, it will pass the request to the my-service-example service, which acts as a "load balancer".
+The service will pass the request to any of the four running pods, app: example-app. The example app is nothing else but a docker container running a basic Django application. The above example was successfully deployed on DigitalOcean. For more details and to fully understand this example, go to the references and guidelines below.
 ## Deploying your application in Kubernetes
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
@@ -31,7 +33,7 @@ This document will guide you through the setup of a web application with kuberne
 14. With HELM package manager add the ingress nginx controller. ``helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx``
 15. Update the repos ``helm repo update``
 16. Install the nginx ingress controller ``helm install nginx-ingress ingress-nginx/ingress-nginx --set controller.publishService.enabled=true``
-17. Repeat ``kubectl get svc `` until you see an IP address in EXTERNAL-IP. 
+17. Repeat ``kubectl get svc `` until you see an IP address in EXTERNAL-IP. ![Domain setup](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/domain_setup.png)
 18. Then in your domain settings, apply an A record, for your subdomain "www", to that loadbalancer IP called ``nginx-ingress-ingress-nginx-controller``. Wait for TTL at least 30 seconds, and set it in the domain setting. Wait some time. In ingress.yml set your domain, change your service name.
 19. Check on your machine the DNS is refreshed and links to the above IP address by typing: ``nslookup www.lab4iottest.xyz``
 20. Then apply the ingress configuration ``kubectl apply -f k8s/ingress.yaml``, wait till you can open the Django site on the given domain via http protocol! 
@@ -54,7 +56,7 @@ This document will guide you through the setup of a web application with kuberne
   Normal  Issuing    32s   cert-manager  The certificate has been successfully issue
 ```
 11. That's it! You are done, you can access your site via the HTTPS endpoint.
-
+![TLS successfully set up](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/final_stage.png)
 ## Guideline and references to help you understand Kubernetes better and more
 1. Kuberenetes for beginners:
 https://www.youtube.com/watch?v=8h4FoWK7tIA&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd
