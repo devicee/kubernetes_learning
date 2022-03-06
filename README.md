@@ -1,6 +1,8 @@
 # README
-This document will guide you through the setup of kubernetes of your application. Then it will continue to setup the TLS certificate for encrypted communication HTTPS.
-![Logo](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/kubernetes_cluster_in_this_tutorial.png)
+This document will guide you through the setup of a web application with kubernetes. The emphasis is on the kubernetes itself rather than a simple Django app. Once it is accessible via the domain, unencrypted HTTP, we will continue to set up the TLS certificate for secure HTTPS.
+![Diagram](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/kubernetes_cluster_in_this_tutorial.png)
+## Description of the diagram and 
+
 ## Deploying your application in Kubernetes
 1. First build the image with the following command, change your docker path:
 ``docker build --tag refikh/django_refa:latest .``
