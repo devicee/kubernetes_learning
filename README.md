@@ -57,9 +57,11 @@ The service will pass the request to any of the four running pods, app: example-
 ```
 11. That's it! You are done, you can access your site via the HTTPS endpoint.
 ![TLS successfully set up](https://raw.githubusercontent.com/devicee/kubernetes_learning/master/images/final_stage.png)
-## Guideline and references to help you understand Kubernetes better and more
+## Guideline and references to help you understand Kubernetes better and that were used here
 1. Kuberenetes for beginners:
+Marcel Dempers
 https://www.youtube.com/watch?v=8h4FoWK7tIA&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd
 
 2. TLS Certificate and nginx ingress controller for DigitalOcean
+Savic
 https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm
